@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"> 
+    
+   
+    <ui:composition template =" ./ template.xhtml "> 
+        <ui:define name =" body "> 
+            <h:form styleClass = "jsfcrud_list_form"> 
+                <h:commandLink action = "#{filmController.previous}" value = "Anterior #{filmController.pageSize}" rendered = "# {filmController.hasPreviousPage}" />  
+                <h:commandLink action = "#{filmController.next}" value = "Siguiente #{filmController.pageSize}" rendered = "# {filmController.hasNextPage}" /> 
+                
+                <h:column> 
+                        <f:facet name = "header"> 
+                            <h:outputText value = "Nombre" /> 
+                        </f:facet>
+                
+                        <h:outputText value = "#{item.nombre}" /> 
+                    </h:column> 
+                    <h:column> 
+                        <f:facet name = "header"> 
+                            <h:outputText value = "Apellidos" /> 
+                        </f:facet> 
+                        <h:outputText value = "#{item.apellidos}" /> 
+                    </h:column> 
+                    <h:column> 
+                        <f:facet name = "header"> 
+                            <h:outputText value = "" /> 
+                        </f:faceta> 
+                        <h:commandLink action = "#{filmController.prepareView}" value = "Ver" /> 
+                    </h:columna>
+                </h:dataTable> 
+                <br/> 
+            </h:form> 
+        </ui:define> 
+    </ui:composición> 
+    
+        
+    
+</html>
+
